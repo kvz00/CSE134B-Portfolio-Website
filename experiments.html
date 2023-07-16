@@ -91,15 +91,34 @@
                     <figcaption>Picture I took of the view along Route 1</figcaption>
                 </figure>
 
+                <br>
+
                 <h3>Another Pretty View</h3>
                 <video controls>
                     <source src="../griffith_obsv.mp4" type="video/mp4">
                 </video>
 
+                <br>
+
                 <h3>Audio File</h3>
                 <audio controls>
                     <source src="../sound.wav" type="audio/mpeg">
                 </audio>
+
+                <br>
+
+                <canvas id="canvas"></canvas>
+                    
+                <script>
+                    let canvas = document.getElementById("canvas");
+                    let context = canvas.getContext("2d");
+                    context.fillStyle = "#FF0000";
+                    context.fillRect(0, 0, 80, 80);
+                </script>
+
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+                </svg>
             </section>
         </main>
         <hr>
