@@ -30,10 +30,10 @@
             <section>
                 <div>
                     <h3>Iframe</h3>
-                    <iframe src="about.html" title="About"></iframe>
+                    <iframe src="about.html"></iframe>
                 </div>
                 <br>
-                <h3>Button that displays hidden content</h3>
+                <h3>Button that displays hidden content (script disabled)</h3>
                 <button>Show Content</button>
                 <template>
                     <p>Hidden text!</p>
@@ -54,7 +54,7 @@
                 <br>
                 <h3>Test using optgroup</h3>
                 <form>
-                    <label >Which snack do you like the most?:</label>
+                    <label >Which snack do you like the most?</label>
                     <select>
                         <optgroup label="Salty">
                             <option value="Chips">Chips</option>
@@ -75,8 +75,8 @@
 
                 <form>
                     <label>Some of my favorite foods:</label>
-                    <input>
-                    <datalist>
+                    <input list="foods">
+                    <datalist id="foods">
                         <option value="Pizza">
                         <option value="Sushi">
                         <option value="Mac and Cheese">
