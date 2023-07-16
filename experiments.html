@@ -28,12 +28,25 @@
 
         <main>
             <section>
-                <h3>Iframe</h3>
-                <iframe src="about.html" title="About"></iframe>
+                <div>
+                    <h3>Iframe</h3>
+                    <iframe src="about.html" title="About"></iframe>
+                </div>
                 <br>
-                <h3>Button</h3>
-                <button>Useless Button!</button>
+                <h3>Button that displays hidden content</h3>
+                <button>Show Content</button>
+                <template>
+                    <p>Hidden text!</p>
+                </template>
                 <br>
+
+                <script>
+                    function showContent() {
+                      
+                    }
+                </script>
+
+                
                 <h3>My Cat</h3>
                 <picture>
                     <img src="cat.jpg">
@@ -59,6 +72,19 @@
                     <input type="submit" value="Submit">
                 </form>
                 <br>
+
+                <form>
+                    <label>Some of my favorite foods:</label>
+                    <input>
+                    <datalist>
+                        <option value="Pizza">
+                        <option value="Sushi">
+                        <option value="Mac and Cheese">
+                    </datalist>
+                </form>
+
+                <br>
+                
                 <h3>Pretty View</h3>
                 <figure>
                     <img src="route1_view.jpg">
