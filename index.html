@@ -1,52 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>My Portfolio</title>
-        <link rel="icon" href="icon.png">
-        <meta charset="UTF-8">
-        <meta name="description" content="My Portfolio Website">
-        <meta name="keywords" content="HTML, Portfolio">
-        <meta name="author" content="Kevin Zhou">
-    </head>
+<head>
 
-    <body>
-        <header>
-            <h1><strong>Welcome to My Portfolio</strong></h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="experience.html">Experience</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="skills.html">Skills</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="experiments.html">Experiments</a></li>
-                </ul>
-            </nav>
-        </header>
+    <style>
+        :root {
+        --primary-color: #061C33;
+        --second-color: #FFFFFF;
+        --third-color: #5AB6CD;
+        --fourth-color: #073455;
+        --fifth-color: #047EA3;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @media screen and (min-width: 400px) {
+        
+        }
+
+        @media screen and (min-width: 1920px) {
+            
+        }
+
+        nav a {
+            display: block;
+            float: left;
+            color: var(--second-color);
+            padding: 14px 16px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 17px;
+            transition-duration: 200ms;
+        }
+        
+        #side-menu {
+            display: none;
+        }
+        #home {
+            height: 52vw;
+            width: 100%;
+            background-image: url("background-image.jpg");
+            background-size: 100%;
+        }
+
+        #about-title {
+            grid-area: title;
+            align-self: end;
+            font-size: 48px;
+            color: var(--primary-color);
+            padding-left: 10%;
+        }
+
+        #about-text {
+            grid-area: text;
+            align-self: start;
+            font-size: 24px;
+            word-wrap: break-word;
+            color: var(--second-color);
+            padding-left: 10%;
+            padding-right: 5%;
+            transition-duration: 200ms;
+        }
+
+        #about-text:hover {
+            transform: scale(1.02);
+        }
+
+        #about-image {
+            grid-area: image;
+            justify-self: center;
+            align-self: center;
+            
+        }
+
+        #about-image img:hover {
+            transform: scale(1.05);
+        }
+
+        #about-image img {
+            display: block;
+            width: 90%;
+            height: 90%;
+            border-radius: 20px;
+            object-fit: contain;
+            transition-duration: 200ms;
+        }
+
+        #about {
+            display: grid;
+            height: 52vw;
+            width: 100%;
+            background-color: var(--fifth-color);
+            grid-template-columns: 60% 40%;
+            grid-template-rows: 25% 75%;
+            grid-template-areas: 
+                "title image"
+                "text image";
+        }
+        
+        #experience {
+            display: grid;
+            height: 52vw;
+            width: 100%;
+            background-color: var(--fourth-color);
+            grid-template-columns: 33% 33% 33%;
+            grid-template-rows: 20% 80%;
+            grid-template-areas:
+                "title title title" 
+                "card1 card2 card3";
+        }
+
+        #experience-title {
+            grid-area: title;
+            align-self: center;
+            justify-self: center;
+            font-size: 48px;
+            color: var(--third-color);
+        }
+
+        #experience-card1, #experience-card2, #experience-card3 {
+            width: 90%;
+            height: auto;
+            justify-self: center;
+            margin-left: 5%;
+            margin-bottom: 10%;
+            background-color: var(--second-color);
+            transition-duration: 200ms;
+        }
+
+        #experience-card1:hover, #experience-card2:hover, #experience-card3:hover {
+            outline: 5px solid var(--third-color);
+        }
+
+        #experience-card1 h3, #experience-card2 h3, #experience-card3 h3 {
+            margin-left: 5%;
+            font-size: 24px;
+            color: var(--third-color);
+        }
+
+        #experience-card1 h2, #experience-card2 h2, #experience-card3 h2 {
+            margin-left: 5%;
+            margin-top: 2%;
+            font-size: 28px;
+            color: var(--primary-color);
+        }
+
+        #experience-card1 p, #experience-card2 p, #experience-card3 p {
+            margin-left: 5%;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        #experience-card1 { grid-area: card1}
+        #experience-card2 { grid-area: card2}
+        #experience-card3 { grid-area: card3}
+
+        #skills {
+            display: grid;
+            height: 52vw;
+            width: 100%;
+            background-color: var(--fifth-color);
+            grid-template-columns: 20% 20% 20% 40%;
+            grid-template-rows: 20% 20% 20% 20% 20%;
+            grid-template-areas:
+                ". . . ." 
+                "skill1 skill2 skill3 title"
+                "skill4 skill5 skill6 text"
+                ". . . text"
+                ". . . .";
+        }
+
+        #skills-title {
+            grid-area: title;
+            align-self: end;
+            justify-self: center;
+            font-size: 48px;
+            color: var(--primary-color);
+        }
+
+        #skills-text {
+            grid-area: text;
+            align-self: start;
+            font-size: 24px;
+            word-wrap: break-word;
+            color: var(--second-color);
+            padding-left: 10%;
+            padding-right: 5%;
+        }
+
+        #skill1, #skill2, #skill3, #skill4, #skill5, #skill6 {
+            width: 90%;
+            height: auto;
+            justify-self: center;
+            margin-left: 5%;
+            margin-bottom: 10%;
+            background-color: var(--second-color);
+            transition-duration: 200ms;
+        }
+
+        #skills text{
+            justify-self: center;
+            align-self: center;
+            font-size: 28px;
+            color: var(--primary-color);
+        }
+
+        #skill1 { grid-area: skill1}
+        #skill2 { grid-area: skill2}
+        #skill3 { grid-area: skill3}
+        #skill4 { grid-area: skill4}
+        #skill5 { grid-area: skill5}
+        #skill6 { grid-area: skill6}
+
+        #projects {
+            height: 15vw;
+            width: 100%;
+            background-color: var(--fourth-color);
+        }
+
+        #projects-title {
+            grid-area: title;
+            align-self: center;
+            justify-self: center;
+            font-size: 48px;
+            color: var(--third-color);
+        }
+
+        #contact {
+            display: grid;
+            height: 15vw;
+            width: 100%;
+            background-color: var(--fifth-color);
+            grid-template-columns: 40% 20% 20% 20%;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "title link1 link2 link3";
+        }
+
+        #contact-title {
+            grid-area: title;
+            align-self: center;
+            justify-self: center;
+            font-size: 48px;
+            color: var(--primary-color);
+        }
+
+        #link1, #link2, #link3 {
+            width: 40%;
+            height: 40%;
+            justify-self: center;
+            border-radius: 10px;
+            align-self:center;
+            background-color: var(--primary-color);
+            transition-duration: 200ms;
+        }
+
+        #link1 { grid-area: link1}
+        #link2 { grid-area: link2}
+        #link3 { grid-area: link3}
+
+        #contact text{
+            justify-self: center;
+            align-self: center;
+            font-size: 28px;
+            color: var(--second-color);
+        }
+
+        #home h1 {
+            font-size: 5vw;
+            color: var(--second-color);
+            text-align: center;
+            padding-top: 20%;
+        }
+        #home h2 {
+            font-size: 1.5vw;
+            color: var(--second-color);
+            text-align: center;
+        }
+
+        nav a:hover {
+            background:var(--third-color);
+        }
+
+        nav {
+            display: block;
+            background-color: #333;
+            overflow: hidden;
+            width: 100%;
+            background-color: var(--primary-color);
+        }
     
-        <hr>
+        section {
+            display: block;
+            height: 50vh;
+            width: 100%;
+        }
 
-        <main>
-            <section>
-                <h2>
-                    <b>Kevin Zhou</b>
-                </h2>
-                <h3>
-                    <i>Aspiring Software Engineer</i>
-                </h3>
-                <img src="me.jpg" alt="Picture of me">
-                <p> Hello! I am a fourth-year Computer Engineering student at UC San Diego,<br> 
-                    passionate about software engineering and seeking exciting opportunities<br>
-                    in the field. With a strong foundation in computer science and engineering<br>
-                    principles, along with hands-on experience in developing innovative software<br>
-                    solutions, I am ready to make a significant impact in the industry.<br>
-                </p>
-            </section>
-        </main>
-        <hr>
-        <footer>
-            <p>© 2023 | Kevin Zhou</p>
-        </footer>
-    </body>
+        @font-face {
+            font-family: 'roboto-light';
+            src: url('Roboto-Light.ttf') format('truetype');
+        }
+
+        body {
+            display:block;
+            font-family: 'roboto-light', Arial, sans-serif;
+        }
+
+        #home { animation: fadeIn 1s; }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Hi, I'm Kevin, a software engineer! </h1>
+            <h2>Welcome to my portfolio! Check out my journey from ideas to applications</h2>
+            <br>
+            
+        </section>
+
+        <section id="about">
+            <h2 id="about-title">About Me</h2>
+            <p id="about-text">Hi there! I'm Kevin, a recent Computer Engineering graduate with a strong passion for software development. My love for coding is not just about finding solutions - it's about doing so in the most efficient and effective way. It's a puzzle that I take pride in solving.
+                Throughout my academic journey, I've gained proficiency in several programming languages including Java, Python, and C++.
+                <br><br>                
+                As I transition into the professional world, I'm looking forward to bringing my strong technical skills, problem-solving mindset, and vibrant team spirit to a dynamic software engineering role. I believe that my blend of technical prowess and vibrant energy will add value to any team. Feel free to reach out if you're looking for someone who is as excited about delivering high-quality software solutions as they are about creating a positive team environment.</p>
+            <picture id="about-image">
+                <source media="(min-width: 800px)" srcset="aboutmegraphic.jpg">
+                <img src="aboutmegraphic-small.jpg" alt="graphic for about me section">
+            </picture>            
+        </section>
+
+        <section id="experience">
+            <h2 id="experience-title">Work Experience</h2>
+            <box id="experience-card1">
+                <h2>COMPANY 1</h2>
+                <h3>Job Title</h3>
+                <hr>
+                <p>Description of work</p>
+            </box>
+            <box id="experience-card2">
+                <h2>COMPANY 2</h2>
+                <h3>Job Title</h3>
+                <hr>
+                <p>Description of work</p>
+            </box>
+            <box id="experience-card3">
+                <h2>COMPANY 3</h2>
+                <h3>Job Title</h3>
+                <hr>
+                <p>Description of work</p>
+            </box>
+        </section>
+
+        <section id="skills">
+            <h2 id="skills-title">Skills</h2>
+            <p id="skills-text">Here's a snapshot of the technical skills I bring to the table. Built through practical experience and academic learning, they're the tools I use to solve problems and create effective solutions.</p>
+            <box id="skill1"><text>HTML</text></box>
+            <box id="skill2"><text>CSS</text></box>
+            <box id="skill3"><text>JavaScript</text></box>
+            <box id="skill4"><text>Python</text></box>
+            <box id="skill5"><text>Java</text></box>
+            <box id="skill6"><text>C++</text></box>
+        </section>
+
+        <section id="projects">
+            <h2 id="projects-title">Projects</h2>
+        </section>
+
+        <section id="contact">
+            <h2 id="contact-title">Contact Me</h2>
+            <box id="link1"><text>Email</text></box>
+            <box id="link2"><text>LinkedIn</text></box>
+            <box id="link3"><text>Github</text></box>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Kevin Zhou</p>
+    </footer>
+</body>
 </html>
