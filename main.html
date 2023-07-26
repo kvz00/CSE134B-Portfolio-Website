@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        :root {
+        --primary-color: #061C33;
+        --second-color: #FFFFFF;
+        --third-color: #5AB6CD;
+        --fourth-color: #073455;
+        --fifth-color: #047EA3;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @media screen and (min-width: 400px) {
+        
+        }
+
+        @media screen and (min-width: 1920px) {
+            
+        }
+
+        nav a {
+            display: block;
+            float: left;
+            color: var(--second-color);
+            padding: 14px 16px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 17px;
+            transition-duration: 200ms;
+        }
+        
+        #side-menu {
+            display: none;
+        }
+        #home {
+            height: 52vw;
+            width: 100%;
+            background-image: url("background-image.jpg");
+            background-size: 100%;
+        }
+
+        #skills {
+            height: 52vw;
+            width: 100%;
+            background-color: var(--fifth-color);
+        }
+
+        #projects {
+            height: 52vw;
+            width: 100%;
+            background-color: var(--fourth-color);
+            display: grid;
+            grid-template-columns: 2;
+            grid-template-rows: 1;
+        }
+
+        #about-title {
+            grid-area: title;
+            align-self: end;
+            font-size: 48px;
+            color: var(--primary-color);
+            padding-left: 10%;
+        }
+
+        #about-text {
+            grid-area: text;
+            align-self: start;
+            font-size: 24px;
+            word-wrap: break-word;
+            color: var(--second-color);
+            padding-left: 10%;
+            padding-right: 5%;
+            transition-duration: 200ms;
+        }
+
+        #about-text:hover {
+            transform: scale(1.02);
+        }
+
+        #about-image {
+            grid-area: image;
+            justify-self: center;
+            align-self: center;
+            
+        }
+
+        #about-image img:hover {
+            transform: scale(1.05);
+        }
+
+        #about-image img {
+            display: block;
+            width: 90%;
+            height: 90%;
+            border-radius: 20px;
+            object-fit: contain;
+            transition-duration: 200ms;
+        }
+
+        #about {
+            display: grid;
+            height: 52vw;
+            width: 100%;
+            background-color: var(--fifth-color);
+            grid-template-columns: 60% 40%;
+            grid-template-rows: 25% 75%;
+            grid-template-areas: 
+                "title image"
+                "text image";
+        }
+
+        #contact {
+            height: 52vw;
+            width: 100%;
+            background-color: var(--fifth-color);
+        }
+        
+        #experience {
+            display: grid;
+            height: 52vw;
+            width: 100%;
+            background-color: var(--fourth-color);
+            grid-template-columns: 33% 33% 33%;
+            grid-template-rows: 20% 80%;
+            grid-template-areas:
+                "title title title" 
+                "card1 card2 card3";
+        }
+
+        #experience-title {
+            grid-area: title;
+            align-self: center;
+            justify-self: center;
+            font-size: 48px;
+            color: var(--third-color);
+        }
+
+        #experience-card1, #experience-card2, #experience-card3 {
+            width: 90%;
+            height: auto;
+            justify-self: center;
+            margin-left: 5%;
+            margin-bottom: 10%;
+            background-color: var(--second-color);
+            transition-duration: 200ms;
+        }
+
+        #experience-card1:hover, #experience-card2:hover, #experience-card3:hover {
+            outline: 5px solid var(--third-color);
+        }
+
+        #experience-card1 h3, #experience-card2 h3, #experience-card3 h3 {
+            margin-left: 5%;
+            font-size: 24px;
+            color: var(--third-color);
+        }
+
+        #experience-card1 h2, #experience-card2 h2, #experience-card3 h2 {
+            margin-left: 5%;
+            margin-top: 2%;
+            font-size: 28px;
+            color: var(--primary-color);
+        }
+
+        #experience-card1 p, #experience-card2 p, #experience-card3 p {
+            margin-left: 5%;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        #experience-card1 { grid-area: card1}
+        #experience-card2 { grid-area: card2}
+        #experience-card3 { grid-area: card3}
+
+        #home h1 {
+            font-size: 5vw;
+            color: var(--second-color);
+            text-align: center;
+            padding-top: 20%;
+        }
+        #home h2 {
+            font-size: 3vw;
+            color: var(--second-color);
+            text-align: center;
+        }
+
+        nav a:hover {
+            background:var(--third-color);
+        }
+
+        nav {
+            display: block;
+            background-color: #333;
+            overflow: hidden;
+            width: 100%;
+            background-color: var(--primary-color);
+        }
+    
+        section {
+            display: block;
+            height: 50vh;
+            width: 100%;
+        }
+
+        @font-face {
+            font-family: 'roboto-light';
+            src: url('Roboto-Light.ttf') format('truetype');
+        }
+
+        body {
+            display:block;
+            font-family: 'roboto-light', Arial, sans-serif;
+        }
+
+        #home { animation: fadeIn 1s; }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>HI MY NAME IS KEVIN </h1>
+            <h2>SOME TEXT</h2>
+            <br>
+            
+        </section>
+
+        <section id="about">
+            <h2 id="about-title">About Me</h2>
+            <p id="about-text">Hi there! I'm Kevin, a recent Computer Engineering graduate with a strong passion for software development. My love for coding is not just about finding solutions - it's about doing so in the most efficient and effective way. It's a puzzle that I take pride in solving.
+                Throughout my academic journey, I've gained proficiency in several programming languages including Java, Python, and C++.
+                <br><br>                
+                As I transition into the professional world, I'm looking forward to bringing my strong technical skills, problem-solving mindset, and vibrant team spirit to a dynamic software engineering role. I believe that my blend of technical prowess and vibrant energy will add value to any team. Feel free to reach out if you're looking for someone who is as excited about delivering high-quality software solutions as they are about creating a positive team environment.</p>
+            <picture id="about-image">
+                <source media="(min-width: 800px)" srcset="aboutmegraphic.jpg">
+                <img src="aboutmegraphic-small.jpg" alt="graphic for about me section">
+            </picture>            
+        </section>
+
+        <section id="experience">
+            <h2 id="experience-title">Work Experience</h2>
+            <box id="experience-card1">
+                <h2>COMPANY 1</h2>
+                <h3>Job Title</h3>
+                <hr>
+                <p>Description of work</p>
+            </box>
+            <box id="experience-card2">
+                <h2>COMPANY 2</h2>
+                <h3>Job Title</h3>
+                <hr>
+                <p>Description of work</p>
+            </box>
+            <box id="experience-card3">
+                <h2>COMPANY 3</h2>
+                <h3>Job Title</h3>
+                <hr>
+                <p>Description of work</p>
+            </box>
+        </section>
+
+        <h2>Skills</h2>
+
+        <section id="skills">
+            <box>HTML</box>
+            <box>CSS</box>
+            <box>JavaScript</box>
+            <box>Python</box>
+            <box>Java</box>
+            <box>C++</box>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Kevin Zhou</p>
+    </footer>
+</body>
+</html>
